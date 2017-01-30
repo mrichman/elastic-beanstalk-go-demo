@@ -12,7 +12,7 @@ Then, zip from the command line:
 
 or using `git`:
 
-`git archive --format=zip HEAD > elastic-beanstalk-go-demo.zip`
+`git archive --format=zip HEAD > ../elastic-beanstalk-go-demo.zip`
 
 ## Deploying Go Application on Elastic Beanstalk
 
