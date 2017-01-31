@@ -27,8 +27,3 @@ After the application is built, Elastic Beanstalk starts it on port 5000.
 * Provide a source bundle with a binary file called application. The binary file can be located either at the root of the source bundle or in the bin/ directory of the source bundle. If you place the application binary file in both locations, Elastic Beanstalk uses the file in the bin/ directory.
 
 Elastic Beanstalk launches this application on port 5000.
-
-## Local development note
-
-This application attempts to log to `/var/log/golang`. If this directory exists, ensure that it's writable by your user, or run this application using `sudo go run application.go`.
-

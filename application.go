@@ -13,10 +13,6 @@ func main() {
 		port = "5000"
 	}
 
-	f, _ := os.Create("/var/log/golang/golang-server.log")
-	defer f.Close()
-	log.SetOutput(f)
-
 	const indexPage = "public/index.html"
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == "POST" {
