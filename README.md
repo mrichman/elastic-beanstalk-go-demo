@@ -18,6 +18,8 @@ The git command above will zip up the last commit on master.
 
 ## Deploying a Go Application on Elastic Beanstalk
 
+Browse to the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk/), and click "Create New Application".
+
 For simple Go applications, there are two ways to deploy your application:
 
 * **Method 1:** Provide a source bundle with a source file at the root called application.go that contains the main package for your application. Elastic Beanstalk automatically builds the binary using the following command at deployment time:
