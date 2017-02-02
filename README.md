@@ -12,7 +12,7 @@ Then, either zip it from the command line:
 
 or use `git`:
 
-`git archive --format=zip HEAD > ../eb.zip`
+`git archive -o ../eb.zip HEAD`
 
 The git command above will zip up the last commit on master.
 
