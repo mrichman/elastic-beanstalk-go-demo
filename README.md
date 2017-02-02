@@ -6,24 +6,24 @@ Create a zip file from the root of this package, for example:
 
 `cd $GOPATH/src/github.com/mrichman/elastic-beanstalk-go-demo`
 
-Then, zip from the command line:
+Then, either zip it from the command line:
 
-`zip ../elastic-beanstalk-go-demo.zip -r * .[^.]*`
+`zip ../eb.zip -r * .[^.]*`
 
-or using `git`:
+or use `git`:
 
-`git archive --format=zip HEAD > ../elastic-beanstalk-go-demo.zip`
+`git archive --format=zip HEAD > ../eb.zip`
 
-## Deploying Go Application on Elastic Beanstalk
+The git command above will zip up the last commit on master.
+
+## Deploying a Go Application on Elastic Beanstalk
 
 For simple Go applications, there are two ways to deploy your application:
 
-* Provide a source bundle with a source file at the root called application.go that contains the main package for your application. Elastic Beanstalk builds the binary using the following command:
+* **Method 1:** Provide a source bundle with a source file at the root called application.go that contains the main package for your application. Elastic Beanstalk automatically builds the binary using the following command at deployment time:
 
-`go build -o bin/application application.go`
+    `go build -o bin/application application.go`
 
-After the application is built, Elastic Beanstalk starts it on port 5000.
+* **Method 2:** Provide a source bundle with a binary file called application. The binary file can be located either at the root of the source bundle or in the bin/ directory of the source bundle. If you place the application binary file in both locations, Elastic Beanstalk uses the file in the bin/ directory.
 
-* Provide a source bundle with a binary file called application. The binary file can be located either at the root of the source bundle or in the bin/ directory of the source bundle. If you place the application binary file in both locations, Elastic Beanstalk uses the file in the bin/ directory.
-
-Elastic Beanstalk launches this application on port 5000.
+By default, Elastic Beanstalk configures the nginx proxy to forward requests to your application on port 5000. You can override the default port by setting the `PORT` system property to the port on which your main application listens.
