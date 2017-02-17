@@ -1,5 +1,7 @@
 # AWS Elastic Beanstalk Go Demo
 
+Video demo: https://markrichman.com/2017/02/17/aws-elastic-beanstalk-go/
+
 ## Creating a source bundle
 
 Create a zip file from the root of this package, for example:
